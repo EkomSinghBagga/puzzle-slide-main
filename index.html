@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="popup-container" onclick="closePopup()">
+        <div class="popup" onclick="blockClose(event)">
+            <div class="img-input" id="default-image" onclick="preload()">
+                Default Image
+            </div>
+
+            <label class="img-input" id="custom-image" for="upload-photo">Upload Image</label>
+            <input type="file" id="upload-photo" accept='image/*' onchange='uploadImage(event)'>
+
+            <div class="tip">
+                Tip: You can drag the image directly onto the canvas.
+            </div>
+        </div>
+    </div>
+
+    <div class="cnv-container">
+        <h1>Puzzle Slide</h1>
+
+        <div class="top-controls">
+            <div class="changeSourceType">
+                <!-- <strong>Toggle Source</strong>
+                <input type="checkbox" class="checkbox" id="chk" />
+                <label class="label" for="chk">
+                    <div class="ball"></div>
+                </label>
+                <small id="warning">Please allow this page to access your camera</small> -->
+            </div>
+
+            <button class="btn" onclick="openPopup()">Upload Image</button>
+        </div>
+        <div class="bottom-controls">
+            <div class="board-size">
+                <input class="rows-cols" id="rows" type="number" min="2" value="3" max="10" onchange="handleRowsChange()"> X
+                <input class="rows-cols" id="cols" type="number" min="2" value="3" max="10" onchange="handleColsChange()">
+                <button class="btn btn-bottom" id="resize-btn" onclick="resize()">Resize</button>
+
+            </div>
+
+            <button class="btn btn-bottom" id="shuffle-btn" onclick="handleShuffle()">Shuffle</button>
+            <button class="btn btn-bottom" id="toggle-image-btn" onclick="toggleOriginalImage()">Show Original</button>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/tile.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
